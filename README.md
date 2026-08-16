@@ -4,6 +4,12 @@ Paste a messy, unclear, or rambling prompt in. Get back a clean, well-structured
 you can actually use with an AI model. It runs entirely on your own computer using
 [Ollama](https://ollama.com) — nothing you type ever leaves your machine.
 
+![ClearPrompt overview - for anyone and for developers](docs/handwritten-notes.png)
+
+## Demo
+
+![ClearPrompt demo - optimizing a messy prompt into a structured one](docs/demo.gif)
+
 ## What it actually does (plain-language version)
 
 You've probably typed something like *"write me a follow up email idk something professional
