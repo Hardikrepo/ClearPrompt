@@ -24,25 +24,42 @@ and paste it into any AI assistant, wherever you actually want to use it.
 It does this by asking a small AI model (running locally on your machine, not in the cloud)
 to act as a "prompt engineer" and rewrite your text for you.
 
-## How to run it
+## Run it on your local machine
 
-```bash
-npm install
-npm run build
-npm start
-```
+**Prerequisites**
 
-Then open **http://localhost:3417** (or whatever port you choose) in your browser.
+- [Node.js](https://nodejs.org) 18 or later
+- [Ollama](https://ollama.com/download) installed
 
-You'll also need [Ollama](https://ollama.com/download) installed and running, with at least
-one model pulled:
+**Steps**
 
-```bash
-ollama pull qwen2.5:1.5b
-```
+1. Clone the repo:
+   ```bash
+   git clone https://github.com/Hardikrepo/ClearPrompt.git
+   cd ClearPrompt
+   ```
+2. Install dependencies:
+   ```bash
+   npm install
+   ```
+3. Pull the AI model it uses by default (about 1 GB):
+   ```bash
+   ollama pull qwen2.5:1.5b
+   ```
+4. Make sure Ollama is running (it usually starts automatically after installing; if not,
+   run `ollama serve` in a separate terminal).
+5. Build and start the app:
+   ```bash
+   npm run build
+   npm start
+   ```
+6. Open **http://localhost:3000** in your browser.
 
 That's it — no API keys, no account, no sign-up. Type a prompt, click **Optimize prompt**,
 get a result.
+
+For active development instead of a production build, use `npm run dev` in step 5 and it'll
+hot-reload as you edit files.
 
 ## How it was built
 
