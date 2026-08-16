@@ -152,7 +152,3 @@ src/
     formats/                   one file per output "shape" (generic/long-context-assistant/coding-agent/image-gen)
     tokens.ts                  rough token-count estimator, used for the before/after comparison
 ```
-
-## Author
-
-**Hardik Maru** — job.hardikmaru@gmail.com
