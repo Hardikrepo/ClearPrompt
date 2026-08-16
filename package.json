@@ -2,10 +2,6 @@
   "name": "clearprompt",
   "version": "0.1.0",
   "private": true,
-  "author": {
-    "name": "Hardik Maru",
-    "email": "job.hardikmaru@gmail.com"
-  },
   "scripts": {
     "dev": "next dev",
     "build": "next build",

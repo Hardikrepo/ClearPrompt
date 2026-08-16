@@ -15,7 +15,6 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: "ClearPrompt",
   description: "Optimize any prompt into a clean, structured format for your AI model of choice.",
-  authors: [{ name: "Hardik Maru", url: "mailto:job.hardikmaru@gmail.com" }],
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
