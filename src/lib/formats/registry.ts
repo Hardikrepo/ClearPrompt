@@ -49,12 +49,12 @@ rewritten prompt under these sections, omitting any that are genuinely empty:
 Role, Context, Task, Constraints, Output Format, Examples.`,
   },
   {
-    id: "claude",
-    name: "Claude / long-context assistant",
-    description: "Structured for Claude and similar assistants: role, context, task, step-by-step guidance, output spec.",
+    id: "long-context-assistant",
+    name: "Long-context assistant",
+    description: "Structured for large-context AI assistants: role, context, task, step-by-step guidance, output spec.",
     instructions: `${SHARED_RULES}
 
-Target format: an optimized prompt for Claude (or a similar large-context AI assistant).
+Target format: an optimized prompt for a large-context AI assistant.
 Use clear section headers or XML-style tags (e.g. <context>, <task>, <constraints>,
 <output_format>) to separate concerns. State the role/persona if relevant, give
 necessary context, state the task precisely, list constraints and things to avoid,
@@ -67,8 +67,8 @@ reasoning, instruct the model to think through it before answering.`,
     description: "Structured for autonomous coding agents: scope, acceptance criteria, constraints, do-not list.",
     instructions: `${SHARED_RULES}
 
-Target format: instructions for an autonomous coding agent (e.g. Claude Code, Cursor,
-Copilot agent mode) operating on a real codebase. Structure the rewritten prompt with:
+Target format: instructions for an autonomous coding agent (e.g. Cursor, Copilot agent
+mode, or similar) operating on a real codebase. Structure the rewritten prompt with:
 Goal (one sentence), Scope (which files/areas are in bounds), Requirements (concrete,
 testable), Constraints / Do-Not (things the agent must not do, e.g. don't refactor
 unrelated code, don't add dependencies), and Acceptance Criteria (how to verify the

@@ -29,7 +29,7 @@ async function generate({ apiKey, model, systemPrompt, userPrompt }: GenerateOpt
 
 export const anthropicProvider: ProviderAdapter = {
   id: "anthropic",
-  name: "Anthropic (Claude)",
+  name: "Anthropic",
   defaultModel: "claude-sonnet-5",
   suggestedModels: ["claude-sonnet-5", "claude-opus-5", "claude-haiku-4-5-20251001"],
   requiresApiKey: true,

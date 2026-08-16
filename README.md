@@ -19,7 +19,7 @@ you actually want.
 This app takes that rough idea and rewrites it into a proper, structured prompt: a clear
 **Role**, **Context**, **Task**, **Constraints**, and **Output Format** — the kind of prompt
 that reliably gets good results out of any AI model. You can then copy that improved prompt
-and paste it into Claude, ChatGPT, or wherever you actually want to use it.
+and paste it into any AI assistant, wherever you actually want to use it.
 
 It does this by asking a small AI model (running locally on your machine, not in the cloud)
 to act as a "prompt engineer" and rewrite your text for you.
@@ -105,7 +105,7 @@ on a machine with limited free RAM — see the RAM note below.)
 ## Adding a completely different AI provider (advanced)
 
 The model-swap above only changes *which local Ollama model* is used. If you instead want to
-plug in a different AI service entirely (OpenAI, Anthropic's Claude, Google Gemini, or any
+plug in a different AI service entirely (OpenAI, Anthropic, Google Gemini, or any
 other OpenAI-compatible API), the app already has a pluggable system for that, it's just not
 exposed in the UI right now:
 
@@ -117,12 +117,12 @@ exposed in the UI right now:
   write a new adapter file (copy `anthropic.ts` as the simplest example), then add it to
   this list.
 - `src/lib/formats/` — the different "shapes" of optimized prompt it can produce (generic,
-  Claude-specific, coding-agent instructions, image-generation prompts). Same pattern: one
-  file per format, registered in `formats/registry.ts`.
+  long-context-assistant, coding-agent instructions, image-generation prompts). Same pattern:
+  one file per format, registered in `formats/registry.ts`.
 
 The current page (`src/app/page.tsx`) is hardcoded to always use the local Ollama provider
 and the generic format for simplicity, but the underlying plumbing to support any provider
-and any output format already exists and works — it was tested end-to-end with Claude,
+and any output format already exists and works — it was tested end-to-end with Anthropic,
 OpenAI, and Gemini during development.
 
 ## A real lesson learned building this
@@ -148,8 +148,8 @@ src/
     page.tsx                 the whole UI (textarea, button, result)
     api/optimize/route.ts    the server endpoint that talks to Ollama
   lib/
-    providers/                one file per AI backend (Ollama/OpenAI/Claude/Gemini)
-    formats/                   one file per output "shape" (generic/Claude/coding-agent/image-gen)
+    providers/                one file per AI backend (Ollama/OpenAI/Anthropic/Gemini)
+    formats/                   one file per output "shape" (generic/long-context-assistant/coding-agent/image-gen)
     tokens.ts                  rough token-count estimator, used for the before/after comparison
 ```
 
